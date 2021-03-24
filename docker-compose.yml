@@ -1,0 +1,13 @@
+version: "3"
+services:
+  front:
+    container_name: my-blog
+    build:
+      context: ./main
+      dockerfile: Dockerfile
+    command: sh -c "cd /main/src && yarn dev"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./main:/main
+    tty: true
